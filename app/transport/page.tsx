@@ -4,7 +4,8 @@ import { useState } from "react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FAQ } from "@/components/faq";
-import { CheckCircle, Truck, Package, Clock, Shield, Phone, ArrowRight, Send } from "lucide-react";
+import { TransportDialog } from "@/components/transport-dialog";
+import { CheckCircle, Truck, Package, Clock, Shield, Phone, ArrowRight } from "lucide-react";
 import brandConfig from "@/brand.json";
 
 const benefits = [
@@ -14,92 +15,63 @@ const benefits = [
   { icon: Package, title: "Sorgfältig", description: "Professionelle Handhabung Ihrer Güter" },
 ];
 
-const transportTypes = [
-  "Möbeltransport",
-  "Gerätetransport",
-  "Baumaterialien",
-  "Sperrgut",
-  "Paletten",
-  "Sonstiges",
-];
-
 export default function TransportPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState("");
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const primaryColor = brandConfig.theme?.colors?.primary || "#1E4785";
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError("");
-
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get("name"),
-      phone: formData.get("phone"),
-      email: formData.get("email"),
-      transportType: formData.get("transportType"),
-      fromAddress: formData.get("fromAddress"),
-      toAddress: formData.get("toAddress"),
-      date: formData.get("date"),
-      description: formData.get("description"),
-    };
-
-    try {
-      const response = await fetch("/api/transport", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        setIsSubmitted(true);
-      } else {
-        setError("Es gab einen Fehler. Bitte versuchen Sie es erneut.");
-      }
-    } catch {
-      setError("Es gab einen Fehler. Bitte versuchen Sie es erneut.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <>
       <Header />
       <main>
-        {/* Hero Section with Augsburg Panorama */}
-        <section className="relative text-white py-20 overflow-hidden">
+        {/* Hero Section */}
+        <section className="relative text-white py-24 overflow-hidden">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/augsburg-hero.webp')" }}
+            style={{ backgroundImage: "url('/images/augsburg-hero.jpg')" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/80 to-gray-900/60" />
+          <div
+            className="absolute inset-0"
+            style={{ backgroundColor: `${primaryColor}E6` }}
+          />
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 mb-6">
-                <Truck className="h-8 w-8" style={{ color: primaryColor }} />
-                <span className="text-sm font-medium px-3 py-1 rounded-full" style={{ backgroundColor: `${primaryColor}30` }}>
+                <Truck className="h-8 w-8 text-sky-200" />
+                <span className="text-sm font-medium px-3 py-1 rounded-full bg-white/20">
                   Transportservice
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Professionelle Transporte in <span style={{ color: primaryColor }}>Bayern</span>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg">
+                Professionelle Transporte in <span className="text-sky-200">Bayern</span>
               </h1>
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl text-white/90 mb-8">
                 Von Einzelstücken bis zu kompletten Ladungen – wir transportieren Ihre Güter sicher und zuverlässig.
                 Als bayerisches Transportunternehmen kennen wir jede Straße.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 mb-8">
                 {["Versichert", "Termingerecht", "Faire Preise"].map((badge) => (
-                  <div key={badge} className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
+                  <div key={badge} className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full">
+                    <CheckCircle className="h-4 w-4 text-sky-200" />
                     <span>{badge}</span>
                   </div>
                 ))}
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  onClick={() => setIsDialogOpen(true)}
+                  className="inline-flex items-center justify-center bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/90 transition-colors shadow-lg"
+                  style={{ color: primaryColor }}
+                >
+                  Transport anfragen <ArrowRight className="ml-2 h-5 w-5" />
+                </button>
+                <a
+                  href={`tel:${brandConfig.company.phone}`}
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-2xl font-semibold text-lg transition-colors border-2 border-white text-white hover:bg-white/10"
+                >
+                  <Phone className="mr-2 h-5 w-5" /> Jetzt anrufen
+                </a>
               </div>
             </div>
           </div>
@@ -122,200 +94,41 @@ export default function TransportPage() {
           </div>
         </section>
 
-        {/* Form Section */}
+        {/* How it works */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12">
-              {/* Left: Info */}
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Transportanfrage stellen</h2>
-                <p className="text-lg text-gray-600 mb-8">
-                  Beschreiben Sie Ihren Transport und wir melden uns innerhalb von 24 Stunden mit einem
-                  unverbindlichen Angebot bei Ihnen.
-                </p>
-
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${primaryColor}15` }}>
-                      <span className="font-bold" style={{ color: primaryColor }}>1</span>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900">Anfrage ausfüllen</h3>
-                      <p className="text-gray-600">Beschreiben Sie was transportiert werden soll.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${primaryColor}15` }}>
-                      <span className="font-bold" style={{ color: primaryColor }}>2</span>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900">Angebot erhalten</h3>
-                      <p className="text-gray-600">Wir erstellen ein individuelles Angebot für Sie.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${primaryColor}15` }}>
-                      <span className="font-bold" style={{ color: primaryColor }}>3</span>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900">Transport durchführen</h3>
-                      <p className="text-gray-600">Wir holen ab und liefern pünktlich.</p>
-                    </div>
-                  </div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">So funktioniert's</h2>
+            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: `${primaryColor}15` }}>
+                  <span className="font-bold text-lg" style={{ color: primaryColor }}>1</span>
                 </div>
-
-                <div className="mt-8 p-6 bg-white rounded-xl border">
-                  <p className="font-semibold text-gray-900 mb-2">Lieber telefonisch?</p>
-                  <a href={`tel:${brandConfig.company.phone}`} className="inline-flex items-center gap-2 text-lg font-bold" style={{ color: primaryColor }}>
-                    <Phone className="h-5 w-5" />
-                    {brandConfig.company.phone}
-                  </a>
+                <h3 className="font-semibold text-gray-900 mb-2">Anfrage stellen</h3>
+                <p className="text-gray-600">Beschreiben Sie was transportiert werden soll.</p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: `${primaryColor}15` }}>
+                  <span className="font-bold text-lg" style={{ color: primaryColor }}>2</span>
                 </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Angebot erhalten</h3>
+                <p className="text-gray-600">Wir erstellen ein individuelles Angebot für Sie.</p>
               </div>
-
-              {/* Right: Form */}
-              <div className="bg-white rounded-2xl shadow-sm p-8 border">
-                {isSubmitted ? (
-                  <div className="text-center py-12">
-                    <div className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center" style={{ backgroundColor: `${primaryColor}15` }}>
-                      <CheckCircle className="h-8 w-8" style={{ color: primaryColor }} />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Anfrage erhalten!</h3>
-                    <p className="text-gray-600">
-                      Vielen Dank für Ihre Transportanfrage. Wir melden uns innerhalb von 24 Stunden bei Ihnen.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
-                          style={{ outlineColor: primaryColor }}
-                          placeholder="Ihr Name"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Telefon *</label>
-                        <input
-                          type="tel"
-                          id="phone"
-                          name="phone"
-                          required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
-                          style={{ outlineColor: primaryColor }}
-                          placeholder="Ihre Telefonnummer"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">E-Mail</label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
-                        style={{ outlineColor: primaryColor }}
-                        placeholder="Ihre E-Mail-Adresse"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="transportType" className="block text-sm font-medium text-gray-700 mb-1">Art des Transports *</label>
-                      <select
-                        id="transportType"
-                        name="transportType"
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
-                        style={{ outlineColor: primaryColor }}
-                      >
-                        <option value="">Bitte wählen</option>
-                        {transportTypes.map((type) => (
-                          <option key={type} value={type}>{type}</option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="fromAddress" className="block text-sm font-medium text-gray-700 mb-1">Abholadresse *</label>
-                        <input
-                          type="text"
-                          id="fromAddress"
-                          name="fromAddress"
-                          required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
-                          style={{ outlineColor: primaryColor }}
-                          placeholder="PLZ / Stadt"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="toAddress" className="block text-sm font-medium text-gray-700 mb-1">Lieferadresse *</label>
-                        <input
-                          type="text"
-                          id="toAddress"
-                          name="toAddress"
-                          required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
-                          style={{ outlineColor: primaryColor }}
-                          placeholder="PLZ / Stadt"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">Wunschtermin</label>
-                      <input
-                        type="date"
-                        id="date"
-                        name="date"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
-                        style={{ outlineColor: primaryColor }}
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">Was soll transportiert werden? *</label>
-                      <textarea
-                        id="description"
-                        name="description"
-                        required
-                        rows={4}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent resize-none"
-                        style={{ outlineColor: primaryColor }}
-                        placeholder="Beschreiben Sie die zu transportierenden Gegenstände (Größe, Gewicht, Menge...)"
-                      />
-                    </div>
-
-                    {error && (
-                      <div className="p-4 bg-red-50 text-red-700 rounded-lg">
-                        {error}
-                      </div>
-                    )}
-
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full flex items-center justify-center gap-2 px-6 py-4 text-white font-semibold rounded-lg hover:opacity-90 disabled:opacity-50 transition-opacity"
-                      style={{ backgroundColor: primaryColor }}
-                    >
-                      {isSubmitting ? (
-                        "Wird gesendet..."
-                      ) : (
-                        <>
-                          Transportanfrage senden <Send className="h-5 w-5" />
-                        </>
-                      )}
-                    </button>
-                  </form>
-                )}
+              <div className="text-center">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: `${primaryColor}15` }}>
+                  <span className="font-bold text-lg" style={{ color: primaryColor }}>3</span>
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Transport durchführen</h3>
+                <p className="text-gray-600">Wir holen ab und liefern pünktlich.</p>
               </div>
+            </div>
+            <div className="text-center mt-12">
+              <button
+                onClick={() => setIsDialogOpen(true)}
+                className="inline-flex items-center justify-center text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg"
+                style={{ backgroundColor: primaryColor }}
+              >
+                Jetzt Transport anfragen <ArrowRight className="ml-2 h-5 w-5" />
+              </button>
             </div>
           </div>
         </section>
@@ -365,6 +178,8 @@ export default function TransportPage() {
         <FAQ />
       </main>
       <Footer />
+
+      <TransportDialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} />
     </>
   );
 }
