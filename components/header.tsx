@@ -8,14 +8,14 @@ import { Menu, X, Phone, Globe, ChevronDown } from "lucide-react";
 import brandConfig from "@/brand.json";
 
 const services = [
-  { name: "Privatumzug", href: "https://funnel.relofair.com" },
-  { name: "Fernumzug", href: "https://funnel.relofair.com" },
+  { name: "Privatumzug", href: "/privatumzug" },
+  { name: "Fernumzug", href: "/fernumzug" },
   { name: "Transport", href: "/transport" },
-  { name: "Entrümpelung", href: "https://funnel.relofair.com" },
-  { name: "Möbelmontage", href: "https://funnel.relofair.com" },
-  { name: "Halteverbotszone", href: "https://funnel.relofair.com" },
-  { name: "Einlagerung", href: "https://funnel.relofair.com" },
-  { name: "Verpackungsservice", href: "https://funnel.relofair.com" },
+  { name: "Entrümpelung", href: "/entruempelung" },
+  { name: "Möbelmontage", href: "/moebelmontage" },
+  { name: "Halteverbotszone", href: "/halteverbotszone" },
+  { name: "Einlagerung", href: "/einlagerung" },
+  { name: "Verpackungsservice", href: "/verpackungsservice" },
 ];
 
 export function Header() {
@@ -50,15 +50,9 @@ export function Header() {
               {servicesOpen && (
                 <div className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg border py-2 min-w-[200px]">
                   {services.map((service) => (
-                    service.href.startsWith("http") ? (
-                      <a key={service.name} href={service.href} target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" onClick={() => setServicesOpen(false)}>
-                        {service.name}
-                      </a>
-                    ) : (
-                      <Link key={service.href} href={service.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" onClick={() => setServicesOpen(false)}>
-                        {service.name}
-                      </Link>
-                    )
+                    <Link key={service.href} href={service.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" onClick={() => setServicesOpen(false)}>
+                      {service.name}
+                    </Link>
                   ))}
                 </div>
               )}
@@ -85,11 +79,7 @@ export function Header() {
             <div className="flex flex-col space-y-4">
               <div className="text-gray-900 font-medium">Leistungen</div>
               {services.map((service) => (
-                service.href.startsWith("http") ? (
-                  <a key={service.name} href={service.href} target="_blank" rel="noopener noreferrer" className="text-gray-600 pl-4" onClick={() => setIsOpen(false)}>{service.name}</a>
-                ) : (
-                  <Link key={service.href} href={service.href} className="text-gray-600 pl-4" onClick={() => setIsOpen(false)}>{service.name}</Link>
-                )
+                <Link key={service.href} href={service.href} className="text-gray-600 pl-4" onClick={() => setIsOpen(false)}>{service.name}</Link>
               ))}
               <Link href="/staedte" className="text-gray-700 font-medium" onClick={() => setIsOpen(false)}>Servicegebiet</Link>
               <a href={ctaUrl} target="_blank" rel="noopener noreferrer" className="text-white px-4 py-3 rounded-xl font-medium text-center" style={{ backgroundColor: primaryColor }} onClick={() => setIsOpen(false)}>
