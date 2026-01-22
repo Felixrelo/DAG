@@ -60,6 +60,8 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={ctaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/90 transition-colors shadow-lg"
               style={{ color: primaryColor }}
             >

@@ -85,7 +85,7 @@
     "primary": {
       "text": "Angebot erhalten",
       "action": "external",
-      "url": "funnel.relofair.com"
+      "url": "https://funnel.relofair.com"
     },
     "secondary": {
       "text": "Jetzt anrufen",
