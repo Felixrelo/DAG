@@ -8,14 +8,14 @@ import { Menu, X, Phone, Globe, ChevronDown } from "lucide-react";
 import brandConfig from "@/brand.json";
 
 const services = [
-  { name: "Privatumzug", href: "/privatumzug" },
-  { name: "Fernumzug", href: "/fernumzug" },
+  { name: "Privatumzug", href: "https://funnel.relofair.com" },
+  { name: "Fernumzug", href: "https://funnel.relofair.com" },
   { name: "Transport", href: "/transport" },
-  { name: "Entrümpelung", href: "/entruempelung" },
-  { name: "Möbelmontage", href: "/moebelmontage" },
-  { name: "Halteverbotszone", href: "/halteverbotszone" },
-  { name: "Einlagerung", href: "/einlagerung" },
-  { name: "Verpackungsservice", href: "/verpackungsservice" },
+  { name: "Entrümpelung", href: "https://funnel.relofair.com" },
+  { name: "Möbelmontage", href: "https://funnel.relofair.com" },
+  { name: "Halteverbotszone", href: "https://funnel.relofair.com" },
+  { name: "Einlagerung", href: "https://funnel.relofair.com" },
+  { name: "Verpackungsservice", href: "https://funnel.relofair.com" },
 ];
 
 export function Header() {
@@ -50,9 +50,15 @@ export function Header() {
               {servicesOpen && (
                 <div className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg border py-2 min-w-[200px]">
                   {services.map((service) => (
-                    <Link key={service.href} href={service.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" onClick={() => setServicesOpen(false)}>
-                      {service.name}
-                    </Link>
+                    service.href.startsWith("http") ? (
+                      <a key={service.name} href={service.href} target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" onClick={() => setServicesOpen(false)}>
+                        {service.name}
+                      </a>
+                    ) : (
+                      <Link key={service.href} href={service.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" onClick={() => setServicesOpen(false)}>
+                        {service.name}
+                      </Link>
+                    )
                   ))}
                 </div>
               )}
@@ -64,7 +70,7 @@ export function Header() {
             <a href={`tel:${brandConfig.company.phone}`} className="flex items-center font-semibold text-gray-700 hover:opacity-80 transition-colors">
               <Phone className="h-4 w-4 mr-2" />{brandConfig.company.phone}
             </a>
-            <a href={ctaUrl} className="text-white px-4 py-2 rounded-xl font-medium hover:opacity-90 transition-opacity" style={{ backgroundColor: primaryColor }}>
+            <a href={ctaUrl} target="_blank" rel="noopener noreferrer" className="text-white px-4 py-2 rounded-xl font-medium hover:opacity-90 transition-opacity" style={{ backgroundColor: primaryColor }}>
               Kostenloses Angebot
             </a>
           </div>
@@ -79,10 +85,14 @@ export function Header() {
             <div className="flex flex-col space-y-4">
               <div className="text-gray-900 font-medium">Leistungen</div>
               {services.map((service) => (
-                <Link key={service.href} href={service.href} className="text-gray-600 pl-4" onClick={() => setIsOpen(false)}>{service.name}</Link>
+                service.href.startsWith("http") ? (
+                  <a key={service.name} href={service.href} target="_blank" rel="noopener noreferrer" className="text-gray-600 pl-4" onClick={() => setIsOpen(false)}>{service.name}</a>
+                ) : (
+                  <Link key={service.href} href={service.href} className="text-gray-600 pl-4" onClick={() => setIsOpen(false)}>{service.name}</Link>
+                )
               ))}
               <Link href="/staedte" className="text-gray-700 font-medium" onClick={() => setIsOpen(false)}>Servicegebiet</Link>
-              <a href={ctaUrl} className="text-white px-4 py-3 rounded-xl font-medium text-center" style={{ backgroundColor: primaryColor }} onClick={() => setIsOpen(false)}>
+              <a href={ctaUrl} target="_blank" rel="noopener noreferrer" className="text-white px-4 py-3 rounded-xl font-medium text-center" style={{ backgroundColor: primaryColor }} onClick={() => setIsOpen(false)}>
                 Kostenloses Angebot
               </a>
             </div>
