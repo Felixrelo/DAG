@@ -1,0 +1,136 @@
+{
+  "company": {
+    "name": "DAG Dahoam Logistik",
+    "tagline": "Ihr zuverlässiger Umzugspartner",
+    "phone": "082199976623",
+    "whatsapp": "082199976623",
+    "email": "info@dag-logistik.de",
+    "address": {
+      "street": "Ulmer Straße 91",
+      "city": "Augsburg",
+      "postalCode": "86156",
+      "state": "Bayern"
+    }
+  },
+  "services": [
+    "Privatumzug",
+    "Fernumzug",
+    "Entrümpelung",
+    "Möbelmontage",
+    "Halteverbotszone",
+    "Einlagerung",
+    "Verpackungsservice",
+    "Transport"
+  ],
+  "serviceAreas": [
+    "Augsburg"
+  ],
+  "theme": {
+    "preset": "custom",
+    "colors": {
+      "primary": "#1E4785",
+      "secondary": "#1E4785",
+      "accent": "#1E4785"
+    },
+    "fonts": {
+      "heading": "Inter",
+      "body": "Inter"
+    },
+    "borderRadius": "lg"
+  },
+  "layout": {
+    "style": "custom",
+    "variants": {
+      "hero": "image",
+      "services": "image-cards",
+      "reviews": "carousel",
+      "process": "timeline",
+      "trust": "icon-row"
+    }
+  },
+  "media": {
+    "logo": null,
+    "heroImage": null,
+    "heroVideo": null,
+    "gallery": [],
+    "serviceImages": {},
+    "teamPhotos": []
+  },
+  "sections": {
+    "enabled": [
+      "hero",
+      "trust",
+      "reviews",
+      "services",
+      "process",
+      "faq",
+      "serviceAreas",
+      "gallery",
+      "contactDialog"
+    ],
+    "order": [
+      "hero",
+      "trust",
+      "reviews",
+      "services",
+      "process",
+      "faq",
+      "serviceAreas",
+      "gallery",
+      "contactDialog"
+    ],
+    "bundle": "custom"
+  },
+  "cta": {
+    "primary": {
+      "text": "Angebot erhalten",
+      "action": "external",
+      "url": "funnel.relofair.com"
+    },
+    "secondary": {
+      "text": "Jetzt anrufen",
+      "action": "phone"
+    }
+  },
+  "links": {
+    "googleMaps": "https://share.google/4lryKJCyG6OybibQp",
+    "googleReviews": null
+  },
+  "reviews": {
+    "averageRating": 5,
+    "totalReviews": 50,
+    "items": []
+  },
+  "content": {
+    "heroHeadline": null,
+    "heroSubheadline": null
+  },
+  "stats": {
+    "yearsExperience": 11,
+    "completedMoves": 1000,
+    "satisfiedCustomers": 950
+  },
+  "tracking": {
+    "googleAnalyticsId": null,
+    "googleTagManagerId": null,
+    "metaPixelId": null,
+    "googleAdsConversionId": null
+  },
+  "integrations": {
+    "resend": {
+      "apiKey": null,
+      "notificationEmail": "info@dag-logistik.de"
+    }
+  },
+  "seo": {
+    "title": "DAG Dahoam Logistik - Ihr zuverlässiger Umzugspartner",
+    "description": "Professionelle Umzüge in Augsburg und Umgebung. Privatumzug, Fernumzug, Entrümpelung und mehr."
+  },
+  "features": {
+    "scrollProgress": false,
+    "sectionAnimations": true,
+    "reviewsCarousel": true,
+    "languageSwitcher": false
+  },
+  "certificates": []
+}
