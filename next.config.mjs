@@ -14,8 +14,6 @@ const nextConfig = {
   output: 'standalone',
   // Strict mode for better React practices
   reactStrictMode: true,
-  // Optimize fonts
-  optimizeFonts: true,
   // Security headers for better SEO/performance
   async headers() {
     return [
