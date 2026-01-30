@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import brandConfig from "@/brand.json";
+import { useLanguage } from "@/lib/language-context";
 
 function useCountUp(end: number, duration: number = 2000) {
   const [count, setCount] = useState(0);
@@ -35,6 +36,7 @@ function useCountUp(end: number, duration: number = 2000) {
 }
 
 export function Stats() {
+  const { t } = useLanguage();
   const primaryColor = brandConfig.theme?.colors?.primary || "#1E4785";
   const stats = (brandConfig as any).stats || {};
   const completedMoves = stats.completedMoves || 500;
@@ -53,19 +55,19 @@ export function Stats() {
             <div className="text-3xl md:text-4xl font-bold" style={{ color: primaryColor }}>
               {movesCounter.count.toLocaleString()}+
             </div>
-            <div className="text-sm text-gray-500 mt-1">Erfolgreiche Umzüge</div>
+            <div className="text-sm text-gray-500 mt-1">{t.stats.orders}</div>
           </div>
           <div className="text-center" ref={yearsCounter.ref}>
             <div className="text-3xl md:text-4xl font-bold" style={{ color: primaryColor }}>
               {yearsCounter.count}+
             </div>
-            <div className="text-sm text-gray-500 mt-1">Jahre Erfahrung</div>
+            <div className="text-sm text-gray-500 mt-1">{t.stats.years}</div>
           </div>
           <div className="text-center" ref={customersCounter.ref}>
             <div className="text-3xl md:text-4xl font-bold" style={{ color: primaryColor }}>
               {customersCounter.count.toLocaleString()}+
             </div>
-            <div className="text-sm text-gray-500 mt-1">Zufriedene Kunden</div>
+            <div className="text-sm text-gray-500 mt-1">{t.stats.customers}</div>
           </div>
         </div>
       </div>

@@ -9,7 +9,6 @@ import { Services } from "@/components/services";
 import { Process } from "@/components/process";
 import { FAQ } from "@/components/faq";
 import { ServiceAreas } from "@/components/service-areas";
-import { Gallery } from "@/components/gallery";
 import { ContactDialog } from "@/components/contact-dialog";
 
 export default function Home() {
@@ -24,7 +23,6 @@ export default function Home() {
         <Process />
         <Reviews />
         <ServiceAreas />
-        <Gallery />
         <ContactDialog />
         <FAQ />
       </main>

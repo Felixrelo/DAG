@@ -4,6 +4,7 @@ import "./globals.css";
 import { Analytics } from "@/components/analytics";
 import { MobileCTA } from "@/components/mobile-cta";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { LanguageProvider } from "@/lib/language-context";
 import brandConfig from "@/brand.json";
 
 const inter = Inter({
@@ -60,15 +61,17 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
       </head>
       <body className={inter.className}>
-        <ScrollProgress />
-        {children}
-        <MobileCTA />
+        <LanguageProvider>
+          <ScrollProgress />
+          {children}
+          <MobileCTA />
         <Analytics
           googleAnalyticsId={brandConfig.tracking?.googleAnalyticsId}
           metaPixelId={brandConfig.tracking?.metaPixelId}
           googleTagManagerId={brandConfig.tracking?.googleTagManagerId}
           googleAdsConversionId={brandConfig.tracking?.googleAdsConversionId}
         />
+        </LanguageProvider>
       </body>
     </html>
   );

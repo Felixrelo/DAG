@@ -10,16 +10,20 @@ interface AnalyticsProps {
 }
 
 export function Analytics({ googleAnalyticsId, metaPixelId, googleTagManagerId, googleAdsConversionId }: AnalyticsProps) {
+  // Determine which ID to use for gtag initialization
+  const primaryGtagId = googleAnalyticsId || googleAdsConversionId;
+
   return (
     <>
-      {googleAnalyticsId && (
+      {/* Google Analytics and/or Google Ads */}
+      {primaryGtagId && (
         <>
-          <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} strategy="afterInteractive" />
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${primaryGtagId}`} strategy="afterInteractive" />
           <Script id="google-analytics" strategy="afterInteractive">
             {`window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${googleAnalyticsId}');
+              ${googleAnalyticsId ? `gtag('config', '${googleAnalyticsId}');` : ""}
               ${googleAdsConversionId ? `gtag('config', '${googleAdsConversionId}');` : ""}`}
           </Script>
         </>

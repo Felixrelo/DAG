@@ -1,22 +1,35 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import brandConfig from "@/brand.json";
+import { useLanguage } from "@/lib/language-context";
 
-const services = [
-  { name: "Privatumzug", href: "/privatumzug" },
-  { name: "Fernumzug", href: "/fernumzug" },
-  { name: "Entrümpelung", href: "/entruempelung" },
-  { name: "Möbelmontage", href: "/moebelmontage" },
-  { name: "Halteverbotszone", href: "/halteverbotszone" },
-];
+const serviceKeys = [
+  "Privatumzug",
+  "Firmenumzug",
+  "Fernumzug",
+  "Transport",
+  "Entrümpelung",
+  "Möbelmontage",
+  "Halteverbotszone",
+  "Einlagerung",
+] as const;
 
-const legal = [
-  { name: "Impressum", href: "/impressum" },
-  { name: "Datenschutz", href: "/datenschutz" },
-];
+const serviceHrefs: Record<string, string> = {
+  "Privatumzug": "/privatumzug",
+  "Firmenumzug": "/firmenumzug",
+  "Fernumzug": "/fernumzug",
+  "Transport": "/transport",
+  "Entrümpelung": "/entruempelung",
+  "Möbelmontage": "/moebelmontage",
+  "Halteverbotszone": "/halteverbotszone",
+  "Einlagerung": "/einlagerung",
+};
 
 export function Footer() {
+  const { t } = useLanguage();
   const secondaryColor = brandConfig.theme?.colors?.secondary || "#ec4899";
 
   return (
@@ -29,44 +42,51 @@ export function Footer() {
               alt={brandConfig.company.name}
               width={160}
               height={55}
-              className="h-14 w-auto mb-4 brightness-0 invert"
+              className="h-24 w-auto mb-4 brightness-0 invert"
             />
             <p className="text-sm mb-4">{brandConfig.company.tagline || "Ihr zuverlässiger Partner für professionelle Umzüge."}</p>
             <div className="space-y-2 text-sm">
               <div className="flex items-center"><Phone className="h-4 w-4 mr-2" style={{ color: secondaryColor }} />{brandConfig.company.phone}</div>
               <div className="flex items-center"><Mail className="h-4 w-4 mr-2" style={{ color: secondaryColor }} />{brandConfig.company.email}</div>
-              <div className="flex items-center"><MapPin className="h-4 w-4 mr-2" style={{ color: secondaryColor }} />{brandConfig.company.address?.city}, {brandConfig.company.address?.state}</div>
+              <div className="flex items-start"><MapPin className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" style={{ color: secondaryColor }} /><span>{brandConfig.company.address?.street}<br />{brandConfig.company.address?.postalCode} {brandConfig.company.address?.city}</span></div>
             </div>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">Leistungen</h4>
+            <h4 className="text-white font-semibold mb-4">{t.footer.services}</h4>
             <ul className="space-y-2 text-sm">
-              {services.map((service) => (
-                <li key={service.href}><Link href={service.href} className="hover:text-white transition-colors">{service.name}</Link></li>
+              {serviceKeys.map((key) => (
+                <li key={key}>
+                  <Link href={serviceHrefs[key]} className="hover:text-white transition-colors">
+                    {t.services[key]?.name || key}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">Servicegebiete</h4>
+            <h4 className="text-white font-semibold mb-4">{t.footer.serviceAreas}</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/staedte" className="hover:text-white transition-colors">Alle Standorte</Link></li>
+              <li><Link href="/staedte" className="hover:text-white transition-colors">{t.footer.allLocations}</Link></li>
+            </ul>
+            <h4 className="text-white font-semibold mb-4 mt-6">{t.footer.guide}</h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/umzugsratgeber" className="hover:text-white transition-colors">{t.nav.guide}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">Rechtliches</h4>
+            <h4 className="text-white font-semibold mb-4">{t.footer.legal}</h4>
             <ul className="space-y-2 text-sm">
-              {legal.map((item) => (
-                <li key={item.href}><Link href={item.href} className="hover:text-white transition-colors">{item.name}</Link></li>
-              ))}
+              <li><Link href="/impressum" className="hover:text-white transition-colors">{t.footer.imprint}</Link></li>
+              <li><Link href="/datenschutz" className="hover:text-white transition-colors">{t.footer.privacy}</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800 text-sm text-center">
-          <p>© {new Date().getFullYear()} {brandConfig.company.name}. Alle Rechte vorbehalten.</p>
+          <p>© {new Date().getFullYear()} {brandConfig.company.name}. {t.footer.rights}</p>
         </div>
       </div>
     </footer>

@@ -6,21 +6,21 @@
     "whatsapp": "082199976623",
     "email": "info@dag-logistik.de",
     "address": {
-      "street": "Ulmer Straße 91",
+      "street": "Viktoriastraße 3b",
       "city": "Augsburg",
-      "postalCode": "86156",
+      "postalCode": "86150",
       "state": "Bayern"
     }
   },
   "services": [
     "Privatumzug",
+    "Firmenumzug",
     "Fernumzug",
+    "Transport",
     "Entrümpelung",
     "Möbelmontage",
     "Halteverbotszone",
-    "Einlagerung",
-    "Verpackungsservice",
-    "Transport"
+    "Einlagerung"
   ],
   "serviceAreas": [
     "Augsburg"
@@ -53,14 +53,22 @@
     "heroImage": null,
     "heroVideo": null,
     "gallery": [],
-    "serviceImages": {},
+    "serviceImages": {
+      "Privatumzug": "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=600&q=80",
+      "Firmenumzug": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
+      "Fernumzug": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80",
+      "Transport": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600&q=80",
+      "Entrümpelung": "/images/entruempelung.webp",
+      "Möbelmontage": "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=600&q=80",
+      "Halteverbotszone": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=600&q=80",
+      "Einlagerung": "/images/storage.jpg"
+    },
     "teamPhotos": []
   },
   "sections": {
     "enabled": [
       "hero",
       "trust",
-      "reviews",
       "services",
       "process",
       "faq",
@@ -71,7 +79,6 @@
     "order": [
       "hero",
       "trust",
-      "reviews",
       "services",
       "process",
       "faq",
@@ -85,7 +92,7 @@
     "primary": {
       "text": "Angebot erhalten",
       "action": "external",
-      "url": "https://funnel.relofair.com"
+      "url": "https://funnel.relofair.com/?utm_source=dag&lang=de"
     },
     "secondary": {
       "text": "Jetzt anrufen",
@@ -94,7 +101,7 @@
   },
   "links": {
     "googleMaps": "https://share.google/4lryKJCyG6OybibQp",
-    "googleReviews": null
+    "googleReviews": "https://share.google/vsxFjKz2x0A6nG8Zu"
   },
   "reviews": {
     "averageRating": 5,
@@ -107,14 +114,14 @@
   },
   "stats": {
     "yearsExperience": 11,
-    "completedMoves": 1000,
-    "satisfiedCustomers": 950
+    "completedMoves": 2000,
+    "satisfiedCustomers": 500
   },
   "tracking": {
     "googleAnalyticsId": null,
     "googleTagManagerId": null,
     "metaPixelId": null,
-    "googleAdsConversionId": null
+    "googleAdsConversionId": "AW-17852355930"
   },
   "integrations": {
     "resend": {
@@ -130,7 +137,7 @@
     "scrollProgress": false,
     "sectionAnimations": true,
     "reviewsCarousel": true,
-    "languageSwitcher": false
+    "languageSwitcher": true
   },
   "certificates": []
 }

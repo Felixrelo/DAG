@@ -1,0 +1,168 @@
+{
+  "nav": {
+    "services": "Leistungen",
+    "serviceArea": "Servicegebiet",
+    "guide": "Umzugsratgeber",
+    "freeQuote": "Kostenloses Angebot"
+  },
+  "hero": {
+    "title": "Ihr zuverlässiger Umzugspartner in Augsburg",
+    "subtitle": "Professionelle Umzüge, Transporte und Entrümpelungen – schnell, sicher und fair.",
+    "cta": "Angebot erhalten",
+    "callNow": "Jetzt anrufen",
+    "googleRating": "Google Bewertung"
+  },
+  "stats": {
+    "orders": "Erfolgreiche Aufträge",
+    "years": "Jahre Erfahrung",
+    "customers": "Zufriedene Kunden"
+  },
+  "services": {
+    "title": "Unsere Leistungen",
+    "subtitle": "Von Privatumzügen bis zur Entrümpelung – wir bieten Ihnen den kompletten Service.",
+    "learnMore": "Mehr erfahren",
+    "Privatumzug": {
+      "name": "Privatumzug",
+      "description": "Stressfreier Umzug für Ihr Zuhause mit Rundum-Service.",
+      "longDescription": "Ein Umzug ist mehr als nur der Transport von Möbeln – er markiert einen neuen Lebensabschnitt. Bei DAG Dahoam Logistik verstehen wir das und behandeln Ihren Umzug mit der Sorgfalt, die er verdient."
+    },
+    "Firmenumzug": {
+      "name": "Firmenumzug",
+      "description": "Effiziente Büroumzüge mit minimaler Ausfallzeit.",
+      "longDescription": "Ein Firmenumzug erfordert präzise Planung und professionelle Durchführung. Mit unserer langjährigen Erfahrung minimieren wir Ihre Ausfallzeiten."
+    },
+    "Fernumzug": {
+      "name": "Fernumzug",
+      "description": "Deutschlandweite Umzüge mit zuverlässiger Planung.",
+      "longDescription": "Ob von Augsburg nach Hamburg oder München nach Berlin – wir bringen Sie sicher ans Ziel."
+    },
+    "Transport": {
+      "name": "Transport",
+      "description": "Flexible Transportlösungen für jede Anforderung.",
+      "longDescription": "Professionelle Transportdienstleistungen für Möbel, Geräte und mehr."
+    },
+    "Entrümpelung": {
+      "name": "Entrümpelung",
+      "description": "Professionelle Entrümpelung und Entsorgung.",
+      "longDescription": "Wir räumen Wohnungen, Keller, Dachböden und Häuser schnell und gründlich."
+    },
+    "Möbelmontage": {
+      "name": "Möbelmontage",
+      "description": "Fachgerechter Auf- und Abbau Ihrer Möbel.",
+      "longDescription": "Professionelle Montage und Demontage aller Möbelarten."
+    },
+    "Halteverbotszone": {
+      "name": "Halteverbotszone",
+      "description": "Wir kümmern uns um die Genehmigung.",
+      "longDescription": "Wir beantragen und stellen Halteverbotszonen für Ihren stressfreien Umzug."
+    },
+    "Einlagerung": {
+      "name": "Einlagerung",
+      "description": "Sichere Lagerung für Ihre Möbel und Gegenstände.",
+      "longDescription": "Flexible Lagerlösungen für kurz- oder langfristige Einlagerung."
+    }
+  },
+  "process": {
+    "title": "So einfach geht's",
+    "subtitle": "In nur wenigen Schritten zu Ihrem stressfreien Umzug",
+    "step1": {
+      "title": "Anfrage stellen",
+      "description": "Kontaktieren Sie uns online oder telefonisch"
+    },
+    "step2": {
+      "title": "Angebot erhalten",
+      "description": "Kostenlose Besichtigung und Festpreisangebot"
+    },
+    "step3": {
+      "title": "Termin vereinbaren",
+      "description": "Wählen Sie Ihren Wunschtermin"
+    },
+    "step4": {
+      "title": "Entspannt umziehen",
+      "description": "Wir kümmern uns um alles"
+    }
+  },
+  "reviews": {
+    "title": "Was unsere Kunden sagen",
+    "viewAll": "Alle Bewertungen auf Google ansehen"
+  },
+  "serviceAreas": {
+    "title": "Unser Servicegebiet",
+    "subtitle": "Wir sind in Augsburg und der gesamten Region für Sie da",
+    "coverage": "Unser Einzugsgebiet",
+    "coverageText": "Wir bedienen Augsburg und einen Umkreis von 100km. Für Fernumzüge sind wir deutschlandweit für Sie unterwegs.",
+    "localExpert": "Ihr lokaler Experte",
+    "localExpertText": "Als Augsburger Unternehmen kennen wir die Region wie unsere Westentasche."
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "subtitle": "Antworten auf die wichtigsten Fragen rund um Ihren Umzug"
+  },
+  "footer": {
+    "services": "Leistungen",
+    "serviceAreas": "Servicegebiete",
+    "allLocations": "Alle Standorte",
+    "guide": "Ratgeber",
+    "legal": "Rechtliches",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "rights": "Alle Rechte vorbehalten"
+  },
+  "cta": {
+    "getQuote": "Angebot erhalten",
+    "call": "Anrufen",
+    "freeQuote": "Kostenloses Angebot"
+  },
+  "forms": {
+    "name": "Ihr Name",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "message": "Nachricht",
+    "submit": "Absenden",
+    "sending": "Wird gesendet...",
+    "success": "Vielen Dank! Wir melden uns in Kürze.",
+    "error": "Fehler beim Senden. Bitte versuchen Sie es erneut."
+  },
+  "guide": {
+    "title": "Umzugsratgeber",
+    "subtitle": "Alles, was Sie für einen stressfreien Umzug wissen müssen. Mit praktischer Checkliste zum Download.",
+    "toChecklist": "Zur Checkliste",
+    "introTitle": "So gelingt Ihr Umzug ohne Stress",
+    "introText1": "Ein Umzug ist aufregend – aber auch mit viel Planung verbunden. Damit Sie den Überblick behalten und nichts Wichtiges vergessen, haben wir diesen umfassenden Umzugsratgeber zusammengestellt.",
+    "introText2": "Egal ob Sie zum ersten Mal umziehen oder schon Erfahrung haben: Mit unserer Schritt-für-Schritt-Anleitung und der praktischen Checkliste sind Sie bestens vorbereitet.",
+    "checklistTitle": "Umzugs-Checkliste: Ihr Zeitplan",
+    "checklistSubtitle": "Folgen Sie diesem Zeitplan, um nichts zu vergessen und entspannt umzuziehen.",
+    "downloadTitle": "Checkliste als PDF",
+    "downloadText": "Laden Sie unsere Umzugscheckliste herunter und haken Sie jeden Punkt ab.",
+    "downloadButton": "PDF herunterladen",
+    "packingTitle": "Richtig packen: Die besten Tipps",
+    "packingSubtitle": "Mit diesen Tipps packen Sie effizienter und schützen Ihre Sachen optimal.",
+    "costTitle": "Was kostet ein Umzug?",
+    "costSubtitle": "Die Kosten variieren je nach individueller Situation. Diese Faktoren beeinflussen den Preis:",
+    "costTip": "Unser Tipp: Festpreisangebot",
+    "costTipText": "Bei DAG Dahoam Logistik erhalten Sie nach einer kostenlosen Besichtigung einen verbindlichen Festpreis. So gibt es am Ende keine bösen Überraschungen.",
+    "chooseTitle": "Das richtige Umzugsunternehmen finden",
+    "chooseIntro": "Die Wahl des richtigen Umzugsunternehmens ist entscheidend für einen reibungslosen Ablauf. Achten Sie auf folgende Punkte:",
+    "lookFor": "Darauf sollten Sie achten",
+    "warnings": "Warnzeichen erkennen",
+    "afterTitle": "Nach dem Umzug: Das sollten Sie nicht vergessen",
+    "authorities": "Behördengänge",
+    "addressChanges": "Adressänderungen",
+    "readyTitle": "Bereit für Ihren Umzug?",
+    "readySubtitle": "Lassen Sie sich jetzt unverbindlich beraten und erhalten Sie ein kostenloses Angebot.",
+    "timeline": {
+      "8weeks": "8 Wochen vorher",
+      "6weeks": "6 Wochen vorher",
+      "4weeks": "4 Wochen vorher",
+      "2weeks": "2 Wochen vorher",
+      "1week": "1 Woche vorher",
+      "movingDay": "Umzugstag"
+    }
+  },
+  "trust": {
+    "freeQuote": "Kostenlose Besichtigung",
+    "fixedPrice": "Festpreisgarantie",
+    "insured": "Vollversichert",
+    "experienced": "Erfahrenes Team"
+  }
+}

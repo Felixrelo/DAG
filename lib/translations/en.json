@@ -1,0 +1,168 @@
+{
+  "nav": {
+    "services": "Services",
+    "serviceArea": "Service Area",
+    "guide": "Moving Guide",
+    "freeQuote": "Free Quote"
+  },
+  "hero": {
+    "title": "Your Reliable Moving Partner in Augsburg",
+    "subtitle": "Professional moves, transport and clearances – fast, safe and fair.",
+    "cta": "Get Quote",
+    "callNow": "Call Now",
+    "googleRating": "Google Rating"
+  },
+  "stats": {
+    "orders": "Successful Orders",
+    "years": "Years Experience",
+    "customers": "Happy Customers"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "From private moves to clearances – we offer you the complete service.",
+    "learnMore": "Learn more",
+    "Privatumzug": {
+      "name": "Private Move",
+      "description": "Stress-free moving for your home with full service.",
+      "longDescription": "A move is more than just transporting furniture – it marks a new chapter in life. At DAG Dahoam Logistik, we understand this and treat your move with the care it deserves."
+    },
+    "Firmenumzug": {
+      "name": "Office Move",
+      "description": "Efficient office relocations with minimal downtime.",
+      "longDescription": "An office move requires precise planning and professional execution. With our years of experience, we minimize your downtime."
+    },
+    "Fernumzug": {
+      "name": "Long Distance Move",
+      "description": "Germany-wide moves with reliable planning.",
+      "longDescription": "Whether from Augsburg to Hamburg or Munich to Berlin – we get you there safely."
+    },
+    "Transport": {
+      "name": "Transport",
+      "description": "Flexible transport solutions for every requirement.",
+      "longDescription": "Professional transport services for furniture, equipment and more."
+    },
+    "Entrümpelung": {
+      "name": "Clearance",
+      "description": "Professional clearance and disposal.",
+      "longDescription": "We clear apartments, basements, attics and houses quickly and thoroughly."
+    },
+    "Möbelmontage": {
+      "name": "Furniture Assembly",
+      "description": "Professional assembly and disassembly of your furniture.",
+      "longDescription": "Professional assembly and disassembly of all types of furniture."
+    },
+    "Halteverbotszone": {
+      "name": "No-Parking Zone",
+      "description": "We take care of the permit.",
+      "longDescription": "We apply for and set up no-parking zones for your stress-free move."
+    },
+    "Einlagerung": {
+      "name": "Storage",
+      "description": "Safe storage for your furniture and belongings.",
+      "longDescription": "Flexible storage solutions for short or long-term storage."
+    }
+  },
+  "process": {
+    "title": "How It Works",
+    "subtitle": "Just a few steps to your stress-free move",
+    "step1": {
+      "title": "Submit Request",
+      "description": "Contact us online or by phone"
+    },
+    "step2": {
+      "title": "Get Quote",
+      "description": "Free inspection and fixed price offer"
+    },
+    "step3": {
+      "title": "Schedule Date",
+      "description": "Choose your preferred date"
+    },
+    "step4": {
+      "title": "Relax & Move",
+      "description": "We take care of everything"
+    }
+  },
+  "reviews": {
+    "title": "What Our Customers Say",
+    "viewAll": "View all reviews on Google"
+  },
+  "serviceAreas": {
+    "title": "Our Service Area",
+    "subtitle": "We are here for you in Augsburg and the entire region",
+    "coverage": "Our Coverage Area",
+    "coverageText": "We serve Augsburg and a radius of 100km. For long-distance moves, we operate throughout Germany.",
+    "localExpert": "Your Local Expert",
+    "localExpertText": "As an Augsburg-based company, we know the region like the back of our hand."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to the most important questions about your move"
+  },
+  "footer": {
+    "services": "Services",
+    "serviceAreas": "Service Areas",
+    "allLocations": "All Locations",
+    "guide": "Guide",
+    "legal": "Legal",
+    "imprint": "Imprint",
+    "privacy": "Privacy Policy",
+    "rights": "All rights reserved"
+  },
+  "cta": {
+    "getQuote": "Get Quote",
+    "call": "Call",
+    "freeQuote": "Free Quote"
+  },
+  "forms": {
+    "name": "Your Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Submit",
+    "sending": "Sending...",
+    "success": "Thank you! We will contact you shortly.",
+    "error": "Error sending. Please try again."
+  },
+  "guide": {
+    "title": "Moving Guide",
+    "subtitle": "Everything you need to know for a stress-free move. With practical checklist to download.",
+    "toChecklist": "To Checklist",
+    "introTitle": "How to Move Without Stress",
+    "introText1": "A move is exciting – but also involves a lot of planning. To help you keep track and not forget anything important, we have put together this comprehensive moving guide.",
+    "introText2": "Whether you are moving for the first time or already have experience: With our step-by-step guide and practical checklist, you are well prepared.",
+    "checklistTitle": "Moving Checklist: Your Timeline",
+    "checklistSubtitle": "Follow this timeline to not forget anything and move relaxed.",
+    "downloadTitle": "Checklist as PDF",
+    "downloadText": "Download our moving checklist and check off each item.",
+    "downloadButton": "Download PDF",
+    "packingTitle": "Packing Right: The Best Tips",
+    "packingSubtitle": "With these tips you pack more efficiently and protect your belongings optimally.",
+    "costTitle": "How Much Does a Move Cost?",
+    "costSubtitle": "Costs vary depending on your individual situation. These factors influence the price:",
+    "costTip": "Our Tip: Fixed Price Quote",
+    "costTipText": "At DAG Dahoam Logistik, you receive a binding fixed price after a free inspection. No nasty surprises at the end.",
+    "chooseTitle": "Finding the Right Moving Company",
+    "chooseIntro": "Choosing the right moving company is crucial for a smooth process. Look out for the following points:",
+    "lookFor": "What to Look For",
+    "warnings": "Warning Signs",
+    "afterTitle": "After the Move: Don't Forget These",
+    "authorities": "Official Matters",
+    "addressChanges": "Address Changes",
+    "readyTitle": "Ready for Your Move?",
+    "readySubtitle": "Get a free consultation now and receive a no-obligation quote.",
+    "timeline": {
+      "8weeks": "8 Weeks Before",
+      "6weeks": "6 Weeks Before",
+      "4weeks": "4 Weeks Before",
+      "2weeks": "2 Weeks Before",
+      "1week": "1 Week Before",
+      "movingDay": "Moving Day"
+    }
+  },
+  "trust": {
+    "freeQuote": "Free Inspection",
+    "fixedPrice": "Fixed Price Guarantee",
+    "insured": "Fully Insured",
+    "experienced": "Experienced Team"
+  }
+}
