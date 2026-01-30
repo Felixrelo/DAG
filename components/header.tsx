@@ -50,7 +50,7 @@ export function Header() {
               alt={brandConfig.company.name}
               width={180}
               height={60}
-              className="h-20 w-auto"
+              className="h-12 md:h-16 w-auto"
               priority
             />
           </Link>

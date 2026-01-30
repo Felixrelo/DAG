@@ -85,8 +85,19 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800 text-sm text-center">
+        <div className="mt-12 pt-8 border-t border-gray-800 text-sm text-center space-y-2">
           <p>© {new Date().getFullYear()} {brandConfig.company.name}. {t.footer.rights}</p>
+          <p className="text-gray-500">
+            Bereitgestellt von{" "}
+            <a
+              href="https://www.relofair.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              Relofair
+            </a>
+          </p>
         </div>
       </div>
     </footer>
