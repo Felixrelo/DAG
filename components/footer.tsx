@@ -46,7 +46,7 @@ export function Footer() {
             />
             <p className="text-sm mb-4">{brandConfig.company.tagline || "Ihr zuverlässiger Partner für professionelle Umzüge."}</p>
             <div className="space-y-2 text-sm">
-              <div className="flex items-center"><Phone className="h-4 w-4 mr-2" style={{ color: secondaryColor }} />{brandConfig.company.phone}</div>
+              <div className="flex items-center"><Phone className="h-4 w-4 mr-2" style={{ color: secondaryColor }} />{brandConfig.company.phoneDisplay || brandConfig.company.phone}</div>
               <div className="flex items-center"><Mail className="h-4 w-4 mr-2" style={{ color: secondaryColor }} />{brandConfig.company.email}</div>
               <div className="flex items-start"><MapPin className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" style={{ color: secondaryColor }} /><span>{brandConfig.company.address?.street}<br />{brandConfig.company.address?.postalCode} {brandConfig.company.address?.city}</span></div>
             </div>

@@ -236,7 +236,7 @@ export function ServiceAreas() {
                 href="/staedte"
                 className="inline-flex items-center gap-2 mt-4 text-sky-300 hover:text-white transition-colors font-medium"
               >
-                {language === "de" ? "Alle Servicegebiete ansehen" : "View all service areas"} <ArrowRight className="h-4 w-4" />
+                {language === "de" ? "Gesamte Servicegebiet ansehen" : "View all service areas"} <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
 

@@ -8,8 +8,8 @@ import { cities } from "@/lib/cities";
 import brandConfig from "@/brand.json";
 
 export const metadata: Metadata = {
-  title: `Servicegebiete - DAG Dahoam Logistik`,
-  description: `Wir führen Umzüge in der gesamten Region durch. Entdecken Sie unsere Standorte und Servicegebiete.`,
+  title: `Servicegebiet - DAG Dahoam Logistik`,
+  description: `Wir führen Umzüge in der gesamten Region durch. Entdecken Sie unser Servicegebiet.`,
 };
 
 // Group cities by state
@@ -28,7 +28,7 @@ export default function StaedtePage() {
       <main>
         <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Unsere Servicegebiete</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Unser Servicegebiet</h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Von unserem Standort aus bedienen wir {cities.length}+ Städte und Gemeinden.
             </p>

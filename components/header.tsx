@@ -50,7 +50,7 @@ export function Header() {
               alt={brandConfig.company.name}
               width={180}
               height={60}
-              className="h-12 md:h-16 w-auto"
+              className="h-12 md:h-14 w-auto"
               priority
             />
           </Link>
@@ -78,7 +78,7 @@ export function Header() {
           <div className="hidden md:flex items-center space-x-4">
             <LanguageSwitcher />
             <a href={`tel:${brandConfig.company.phone}`} className="flex items-center font-semibold text-gray-700 hover:opacity-80 transition-colors">
-              <Phone className="h-4 w-4 mr-2" />{brandConfig.company.phone}
+              <Phone className="h-4 w-4 mr-2" />{brandConfig.company.phoneDisplay || brandConfig.company.phone}
             </a>
             <a href={ctaUrl} target="_blank" rel="noopener noreferrer" className="text-white px-4 py-2 rounded-xl font-medium hover:opacity-90 transition-opacity" style={{ backgroundColor: primaryColor }}>
               {t.nav.freeQuote}
