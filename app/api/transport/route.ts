@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     if (process.env.RESEND_API_KEY) {
       const resend = new Resend(process.env.RESEND_API_KEY);
       await resend.emails.send({
-        from: 'DAG Dahoam Logistik <noreply@dag-logistik.de>',
+        from: 'DAG Dahoam Logistik <noreply@relofair.com>',
         to: notificationEmail,
         subject: `Neue Transportanfrage von ${name}`,
         html: `
