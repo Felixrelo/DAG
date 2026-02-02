@@ -10,7 +10,7 @@ export function MobileCTA() {
   const [isVisible, setIsVisible] = useState(false);
   const primaryColor = brandConfig.theme?.colors?.primary || "#7c3aed";
   const secondaryColor = brandConfig.theme?.colors?.secondary || "#ec4899";
-  const ctaUrl = brandConfig.cta?.primary?.url || "/angebot";
+  const ctaUrl = "/angebot";
 
   // Only show after scrolling past hero
   useEffect(() => {

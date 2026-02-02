@@ -103,7 +103,7 @@ export function ServiceAreas() {
   const areas = brandConfig.serviceAreas || [];
   const primaryColor = brandConfig.theme?.colors?.primary || "#1E4785";
   const googleMapsUrl = brandConfig.links?.googleMaps || "#";
-  const ctaUrl = brandConfig.cta?.primary?.url || "/angebot";
+  const ctaUrl = "/angebot";
 
   return (
     <section id="service-areas" className="relative py-24 overflow-hidden">
@@ -167,8 +167,6 @@ export function ServiceAreas() {
             <div className="flex flex-wrap gap-4">
               <a
                 href={ctaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-white/90 transition-colors shadow-lg"
               >
                 {t.cta.getQuote} <ArrowRight className="h-4 w-4" />

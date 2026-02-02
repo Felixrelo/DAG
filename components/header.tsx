@@ -37,7 +37,7 @@ export function Header() {
   const pathname = usePathname();
   const { t } = useLanguage();
 
-  const ctaUrl = brandConfig.cta?.primary?.url || "/angebot";
+  const ctaUrl = "/angebot";
   const primaryColor = brandConfig.theme?.colors?.primary || "#7c3aed";
 
   return (
@@ -80,7 +80,7 @@ export function Header() {
             <a href={`tel:${brandConfig.company.phone}`} className="flex items-center font-semibold text-gray-700 hover:opacity-80 transition-colors">
               <Phone className="h-4 w-4 mr-2" />{brandConfig.company.phoneDisplay || brandConfig.company.phone}
             </a>
-            <a href={ctaUrl} target="_blank" rel="noopener noreferrer" className="text-white px-4 py-2 rounded-xl font-medium hover:opacity-90 transition-opacity" style={{ backgroundColor: primaryColor }}>
+            <a href={ctaUrl} className="text-white px-4 py-2 rounded-xl font-medium hover:opacity-90 transition-opacity" style={{ backgroundColor: primaryColor }}>
               {t.nav.freeQuote}
             </a>
           </div>
@@ -104,7 +104,7 @@ export function Header() {
               ))}
               <Link href="/staedte" className="text-gray-700 font-medium" onClick={() => setIsOpen(false)}>{t.nav.serviceArea}</Link>
               <Link href="/umzugsratgeber" className="text-gray-700 font-medium" onClick={() => setIsOpen(false)}>{t.nav.guide}</Link>
-              <a href={ctaUrl} target="_blank" rel="noopener noreferrer" className="text-white px-4 py-3 rounded-xl font-medium text-center" style={{ backgroundColor: primaryColor }} onClick={() => setIsOpen(false)}>
+              <a href={ctaUrl} className="text-white px-4 py-3 rounded-xl font-medium text-center" style={{ backgroundColor: primaryColor }} onClick={() => setIsOpen(false)}>
                 {t.nav.freeQuote}
               </a>
             </div>

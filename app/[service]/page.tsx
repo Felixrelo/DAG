@@ -193,7 +193,7 @@ export default function ServicePage() {
   const serviceSlug = params.service as string;
   const service = serviceData[serviceSlug];
   const primaryColor = brandConfig.theme?.colors?.primary || "#1E4785";
-  const ctaUrl = brandConfig.cta?.primary?.url || "https://funnel.relofair.com";
+  const ctaUrl = "/angebot";
 
   const [entruempelungOpen, setEntruempelungOpen] = useState(false);
   const [firmenumzugOpen, setFirmenumzugOpen] = useState(false);
@@ -265,8 +265,6 @@ export default function ServicePage() {
                 ) : (
                   <a
                     href={ctaUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/90 transition-colors shadow-lg"
                     style={{ color: primaryColor }}
                   >
@@ -351,8 +349,6 @@ export default function ServicePage() {
               ) : (
                 <a
                   href={ctaUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg"
                   style={{ backgroundColor: primaryColor }}
                 >

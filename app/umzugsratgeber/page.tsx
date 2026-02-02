@@ -183,7 +183,7 @@ const costFactorsEn = [
 export default function UmzugsratgeberPage() {
   const { t, language } = useLanguage();
   const primaryColor = brandConfig.theme?.colors?.primary || "#1E4785";
-  const ctaUrl = brandConfig.cta?.primary?.url || "/angebot";
+  const ctaUrl = "/angebot";
 
   const timelineSteps = language === "de" ? timelineStepsDe : timelineStepsEn;
   const packingTips = language === "de" ? packingTipsDe : packingTipsEn;
@@ -467,8 +467,6 @@ export default function UmzugsratgeberPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href={ctaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/90 transition-colors"
                 style={{ color: primaryColor }}
               >

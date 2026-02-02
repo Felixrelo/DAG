@@ -33,7 +33,7 @@ export default async function CityPage({ params }: PageProps) {
 
   const primaryColor = brandConfig.theme?.colors?.primary || "#7c3aed";
   const secondaryColor = brandConfig.theme?.colors?.secondary || "#ec4899";
-  const ctaUrl = brandConfig.cta?.primary?.url || "/angebot";
+  const ctaUrl = "/angebot";
   const services = brandConfig.services || [];
 
   const trustBadges = ["Kostenlose Besichtigung", "Festpreisgarantie", "100% Versichert"];

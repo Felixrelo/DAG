@@ -6,7 +6,7 @@ import { useLanguage } from "@/lib/language-context";
 
 export function Hero() {
   const { t, language } = useLanguage();
-  const ctaUrl = brandConfig.cta?.primary?.url || "/angebot";
+  const ctaUrl = "/angebot";
   const primaryColor = brandConfig.theme?.colors?.primary || "#1E4785";
 
   const trustBadges = [t.trust.freeQuote, t.trust.fixedPrice, "100% " + (language === "de" ? "Versichert" : "Insured")];
@@ -75,8 +75,6 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={ctaUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/90 transition-colors shadow-lg"
               style={{ color: primaryColor }}
             >

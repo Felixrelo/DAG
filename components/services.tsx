@@ -109,7 +109,7 @@ export function Services() {
   const { t } = useLanguage();
   const primaryColor = brandConfig.theme?.colors?.primary || "#7c3aed";
   const services = brandConfig.services || [];
-  const ctaUrl = brandConfig.cta?.primary?.url || "/angebot";
+  const ctaUrl = "/angebot";
 
   // Get layout variant
   const servicesVariant = (brandConfig as any).layout?.variants?.services || "icon-cards";
@@ -129,8 +129,6 @@ export function Services() {
         <div className="text-center mt-12">
           <a
             href={ctaUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center justify-center text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg"
             style={{ backgroundColor: primaryColor }}
           >
