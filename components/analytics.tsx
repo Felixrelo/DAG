@@ -24,7 +24,8 @@ export function Analytics({ googleAnalyticsId, metaPixelId, googleTagManagerId, 
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               ${googleAnalyticsId ? `gtag('config', '${googleAnalyticsId}');` : ""}
-              ${googleAdsConversionId ? `gtag('config', '${googleAdsConversionId}');` : ""}`}
+              ${googleAdsConversionId ? `gtag('config', '${googleAdsConversionId}');` : ""}
+              ${googleAdsConversionId ? `gtag('event', 'conversion', {'send_to': '${googleAdsConversionId}/D3XJCKuFgPIbENqq1cBC', 'value': 1.0, 'currency': 'TRY'});` : ""}`}
           </Script>
         </>
       )}

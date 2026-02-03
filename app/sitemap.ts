@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { cities } from '@/data/cities';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://DOMAIN';
+  const baseUrl = 'https://dag-logistik.de';
 
   // Static pages
   const staticPages = [
