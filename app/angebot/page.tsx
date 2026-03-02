@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import brandConfig from "@/brand.json";
+import { FunnelIframe } from "@/components/funnel-iframe";
 
 export const metadata: Metadata = {
   title: "Kostenloses Angebot anfordern | DAG Dahoam Logistik",
@@ -9,13 +10,5 @@ export const metadata: Metadata = {
 export default function QuotePage() {
   const funnelUrl = brandConfig.cta?.primary?.url || "https://funnel.relofair.com/?utm_source=dag&lang=de";
 
-  return (
-    <iframe
-      src={funnelUrl}
-      className="fixed inset-0 w-full h-full z-[100] border-0"
-      title="Angebot anfordern"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    />
-  );
+  return <FunnelIframe src={funnelUrl} />;
 }
