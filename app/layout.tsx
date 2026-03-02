@@ -61,6 +61,17 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
       </head>
       <body className={inter.className}>
+        {/* Google Tag Manager (noscript) */}
+        {brandConfig.tracking?.googleTagManagerId && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${brandConfig.tracking.googleTagManagerId}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        )}
         <LanguageProvider>
           <ScrollProgress />
           {children}
