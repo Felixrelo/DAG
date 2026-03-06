@@ -51,7 +51,7 @@ export default function TransportPage() {
                 Als bayerisches Transportunternehmen kennen wir jede Straße.
               </p>
               <div className="flex flex-wrap gap-4 mb-8">
-                {["Versichert", "Termingerecht", "Faire Preise"].map((badge) => (
+                {["Versichert", "Termingerecht", "Faire Preise", "Unverbindliches Angebot in 2 Min."].map((badge) => (
                   <div key={badge} className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full">
                     <CheckCircle className="h-4 w-4 text-sky-200" />
                     <span>{badge}</span>
@@ -61,10 +61,11 @@ export default function TransportPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => setIsDialogOpen(true)}
-                  className="inline-flex items-center justify-center bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/90 transition-colors shadow-lg"
+                  className="inline-flex flex-col items-center justify-center bg-white px-8 py-4 rounded-2xl font-semibold hover:bg-white/90 transition-colors shadow-lg"
                   style={{ color: primaryColor }}
                 >
-                  Transport anfragen <ArrowRight className="ml-2 h-5 w-5" />
+                  <span className="flex items-center text-lg">Unverbindliches Angebot erhalten <ArrowRight className="ml-2 h-5 w-5" /></span>
+                  <span className="flex items-center text-sm font-normal opacity-75"><Clock className="h-3.5 w-3.5 mr-1" />In 2 Min. – unverbindlich</span>
                 </button>
                 <a
                   href={`tel:${brandConfig.company.phone}`}
@@ -104,14 +105,14 @@ export default function TransportPage() {
                   <span className="font-bold text-lg" style={{ color: primaryColor }}>1</span>
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Anfrage stellen</h3>
-                <p className="text-gray-600">Beschreiben Sie was transportiert werden soll.</p>
+                <p className="text-gray-600">In nur 2 Minuten beschreiben, was transportiert werden soll.</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: `${primaryColor}15` }}>
                   <span className="font-bold text-lg" style={{ color: primaryColor }}>2</span>
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Angebot erhalten</h3>
-                <p className="text-gray-600">Wir erstellen ein individuelles Angebot für Sie.</p>
+                <p className="text-gray-600">Sie erhalten ein unverbindliches Angebot – keine versteckten Kosten.</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: `${primaryColor}15` }}>
@@ -124,10 +125,11 @@ export default function TransportPage() {
             <div className="text-center mt-12">
               <button
                 onClick={() => setIsDialogOpen(true)}
-                className="inline-flex items-center justify-center text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg"
+                className="inline-flex flex-col items-center justify-center text-white px-8 py-4 rounded-2xl font-semibold hover:opacity-90 transition-opacity shadow-lg"
                 style={{ backgroundColor: primaryColor }}
               >
-                Jetzt Transport anfragen <ArrowRight className="ml-2 h-5 w-5" />
+                <span className="flex items-center text-lg">Jetzt unverbindliches Angebot erhalten <ArrowRight className="ml-2 h-5 w-5" /></span>
+                <span className="flex items-center text-sm font-normal opacity-75"><Clock className="h-3.5 w-3.5 mr-1" />In 2 Min. – unverbindlich</span>
               </button>
             </div>
           </div>

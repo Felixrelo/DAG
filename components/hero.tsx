@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle, Phone, ArrowRight } from "lucide-react";
+import { CheckCircle, Phone, ArrowRight, Clock } from "lucide-react";
 import brandConfig from "@/brand.json";
 import { useLanguage } from "@/lib/language-context";
 
@@ -75,10 +75,16 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={ctaUrl}
-              className="inline-flex items-center justify-center bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/90 transition-colors shadow-lg"
+              className="inline-flex flex-col items-center justify-center bg-white px-8 py-4 rounded-2xl font-semibold hover:bg-white/90 transition-colors shadow-lg"
               style={{ color: primaryColor }}
             >
-              {t.hero.cta} <ArrowRight className="ml-2 h-5 w-5" />
+              <span className="flex items-center text-lg">
+                {t.hero.cta} <ArrowRight className="ml-2 h-5 w-5" />
+              </span>
+              <span className="flex items-center text-sm font-normal opacity-70">
+                <Clock className="h-3.5 w-3.5 mr-1" />
+                {language === "de" ? "In 2 Min. – unverbindlich" : "In 2 min – non-binding"}
+              </span>
             </a>
             <a
               href={`tel:${brandConfig.company.phone}`}
