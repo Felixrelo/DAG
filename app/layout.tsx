@@ -4,6 +4,7 @@ import "./globals.css";
 import { Analytics } from "@/components/analytics";
 import { MobileCTA } from "@/components/mobile-cta";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { AttributionCapture } from "@/components/attribution-capture";
 import { LanguageProvider } from "@/lib/language-context";
 import brandConfig from "@/brand.json";
 
@@ -71,6 +72,7 @@ export default function RootLayout({
           />
         </noscript>
         <LanguageProvider>
+          <AttributionCapture />
           <ScrollProgress />
           {children}
           <MobileCTA />
