@@ -8,8 +8,9 @@
   "hero": {
     "title": "Your Reliable Moving Partner in Augsburg",
     "subtitle": "Professional moves, transport and clearances – fast, safe and fair.",
-    "cta": "Get Quote",
+    "cta": "Calculate Price",
     "callNow": "Call Now",
+    "callback": "Request Callback",
     "googleRating": "Google Rating"
   },
   "stats": {
@@ -109,7 +110,7 @@
     "rights": "All rights reserved"
   },
   "cta": {
-    "getQuote": "Get Quote",
+    "getQuote": "Calculate Price",
     "call": "Call",
     "freeQuote": "Free Quote"
   },

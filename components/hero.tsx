@@ -1,12 +1,13 @@
 "use client";
 
-import { CheckCircle, Phone, ArrowRight, Clock } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import brandConfig from "@/brand.json";
 import { useLanguage } from "@/lib/language-context";
+import { HeroAddressWidget } from "@/components/hero-address-widget";
+import { HeroContactModal } from "@/components/hero-contact-modal";
 
 export function Hero() {
   const { t, language } = useLanguage();
-  const ctaUrl = "/angebot";
   const primaryColor = brandConfig.theme?.colors?.primary || "#1E4785";
 
   const trustBadges = [t.trust.freeQuote, t.trust.fixedPrice, "100% " + (language === "de" ? "Versichert" : "Insured")];
@@ -71,27 +72,38 @@ export function Hero() {
             }
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={ctaUrl}
-              className="inline-flex flex-col items-center justify-center bg-white px-8 py-4 rounded-2xl font-semibold hover:bg-white/90 transition-colors shadow-lg"
-              style={{ color: primaryColor }}
-            >
-              <span className="flex items-center text-lg">
-                {t.hero.cta} <ArrowRight className="ml-2 h-5 w-5" />
-              </span>
-              <span className="flex items-center text-sm font-normal opacity-70">
-                <Clock className="h-3.5 w-3.5 mr-1" />
-                {language === "de" ? "In 2 Min. – unverbindlich" : "In 2 min – non-binding"}
-              </span>
-            </a>
-            <a
-              href={`tel:${brandConfig.company.phone}`}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-2xl font-semibold text-lg transition-colors border-2 border-white text-white hover:bg-white/10"
-            >
-              <Phone className="mr-2 h-5 w-5" /> {t.hero.callNow}
-            </a>
+          {/* Primary CTA: address search widget (routes into the funnel) */}
+          <div className="max-w-xl">
+            <div className="relative">
+              {/* Soft glow halo — lifts the widget off the busy hero photo and
+                  draws the eye to "Preis berechnen" without a solid container. */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -inset-6"
+                style={{
+                  background:
+                    "radial-gradient(55% 65% at 45% 50%, rgba(255,255,255,0.32), rgba(255,255,255,0) 72%)",
+                  filter: "blur(6px)",
+                }}
+              />
+              <div className="relative">
+                <HeroAddressWidget
+                  src="https://funnel.relofair.com/widgets/hero-address?primary=%231e4785&primaryFg=%23ffffff&primaryRing=rgba%2830%2C58%2C95%2C0.18%29&angebot=https%3A%2F%2Ffunnel.relofair.com%2F%3Futm_source%3Ddag%26lang%3Dde"
+                  angebotUrl="https://funnel.relofair.com/?utm_source=dag&lang=de"
+                />
+              </div>
+            </div>
+
+            <p className="mb-4 flex items-center text-sm text-white/80">
+              {language === "de" ? "In 2 Min. – kostenlos & unverbindlich" : "In 2 min – free & non-binding"}
+            </p>
+
+            {/* Secondary actions: call + request callback */}
+            <HeroContactModal
+              phone={brandConfig.company.phone}
+              callLabel={t.hero.callNow}
+              callbackLabel={t.hero.callback}
+            />
           </div>
 
           {/* Google Rating */}

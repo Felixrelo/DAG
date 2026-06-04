@@ -91,7 +91,7 @@
   },
   "cta": {
     "primary": {
-      "text": "Angebot erhalten",
+      "text": "Preis berechnen",
       "action": "external",
       "url": "https://funnel.relofair.com/?utm_source=dag&lang=de"
     },
@@ -122,7 +122,10 @@
     "googleAnalyticsId": null,
     "googleTagManagerId": "GTM-54SKV2L4",
     "metaPixelId": null,
-    "googleAdsConversionId": "AW-17852355930"
+    "googleAdsConversionId": "AW-17852355930",
+    "googleAdsLabels": {
+      "leadCallback": null
+    }
   },
   "integrations": {
     "resend": {

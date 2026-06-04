@@ -8,8 +8,9 @@
   "hero": {
     "title": "Ihr zuverlässiger Umzugspartner in Augsburg",
     "subtitle": "Professionelle Umzüge, Transporte und Entrümpelungen – schnell, sicher und fair.",
-    "cta": "Angebot erhalten",
+    "cta": "Preis berechnen",
     "callNow": "Jetzt anrufen",
+    "callback": "Rückruf anfordern",
     "googleRating": "Google Bewertung"
   },
   "stats": {
@@ -109,7 +110,7 @@
     "rights": "Alle Rechte vorbehalten"
   },
   "cta": {
-    "getQuote": "Angebot erhalten",
+    "getQuote": "Preis berechnen",
     "call": "Anrufen",
     "freeQuote": "Kostenloses Angebot"
   },
