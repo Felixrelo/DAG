@@ -6,7 +6,7 @@ export async function POST(request: Request) {
   let pool: sql.ConnectionPool | null = null;
 
   try {
-    const { firstName, lastName, phone, email, callbackDate, callbackSlot, leadSource } =
+    const { firstName, lastName, phone, email, callbackDate, callbackSlot } =
       await request.json();
 
     if (!firstName || !lastName || !phone || !email) {
@@ -35,10 +35,9 @@ export async function POST(request: Request) {
       .input("phone", sql.NVarChar(sql.MAX), phone)
       .input("company_id", sql.Int, companyId)
       .input("Status", sql.VarChar(50), "START")
-      .input("lead_source", sql.NVarChar(255), leadSource || "dag_callback")
       .query(`
-        INSERT INTO ReloAI.Leads (thread_id, full_name, email, phone, company_id, Status, lead_source, updatedAt)
-        VALUES (@thread_id, @full_name, @email, @phone, @company_id, @Status, @lead_source, GETDATE())
+        INSERT INTO ReloAI.Leads (thread_id, full_name, email, phone, company_id, Status, updatedAt)
+        VALUES (@thread_id, @full_name, @email, @phone, @company_id, @Status, GETDATE())
       `);
 
     return NextResponse.json({ success: true });
