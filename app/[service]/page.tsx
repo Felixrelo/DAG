@@ -344,7 +344,7 @@ export default function ServicePage() {
                   className="inline-flex items-center justify-center text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg"
                   style={{ backgroundColor: primaryColor }}
                 >
-                  Kostenloses Angebot anfordern <ArrowRight className="ml-2 h-5 w-5" />
+                  Preis berechnen <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
               ) : (
                 <a
@@ -352,7 +352,7 @@ export default function ServicePage() {
                   className="inline-flex items-center justify-center text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg"
                   style={{ backgroundColor: primaryColor }}
                 >
-                  Kostenloses Angebot anfordern <ArrowRight className="ml-2 h-5 w-5" />
+                  Preis berechnen <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               )}
             </div>

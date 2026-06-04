@@ -62,7 +62,7 @@ export function QuoteForm({ className = "" }: { className?: string }) {
         <textarea id="message" name="message" rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent resize-none" style={{ outlineColor: primaryColor }} placeholder="Beschreiben Sie Ihren Umzug..." />
       </div>
       <button type="submit" disabled={isSubmitting} className="w-full flex items-center justify-center gap-2 px-6 py-4 text-white font-semibold rounded-lg hover:opacity-90 disabled:opacity-50 transition-opacity" style={{ backgroundColor: primaryColor }}>
-        {isSubmitting ? <><Loader2 className="w-5 h-5 animate-spin" />Wird gesendet...</> : <><Send className="w-5 h-5" />Kostenloses Angebot anfordern</>}
+        {isSubmitting ? <><Loader2 className="w-5 h-5 animate-spin" />Wird gesendet...</> : <><Send className="w-5 h-5" />Preis berechnen</>}
       </button>
       <p className="text-xs text-gray-500 text-center">Mit dem Absenden stimmen Sie unserer Datenschutzerklärung zu.</p>
     </form>

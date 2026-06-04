@@ -3,7 +3,7 @@
     "services": "Leistungen",
     "serviceArea": "Servicegebiet",
     "guide": "Umzugsratgeber",
-    "freeQuote": "Kostenloses Angebot"
+    "freeQuote": "Preis berechnen"
   },
   "hero": {
     "title": "Ihr zuverlässiger Umzugspartner in Augsburg",
@@ -112,7 +112,7 @@
   "cta": {
     "getQuote": "Preis berechnen",
     "call": "Anrufen",
-    "freeQuote": "Kostenloses Angebot"
+    "freeQuote": "Preis berechnen"
   },
   "forms": {
     "name": "Ihr Name",

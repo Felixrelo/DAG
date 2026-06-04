@@ -47,7 +47,7 @@ export function MobileCTA() {
           style={{ backgroundColor: secondaryColor }}
         >
           <ArrowRight className="w-5 h-5" />
-          <span className="text-xs font-medium">Unverbindliches Angebot</span>
+          <span className="text-xs font-medium">Preis berechnen</span>
         </a>
       </div>
     </div>

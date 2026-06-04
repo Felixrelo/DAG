@@ -64,7 +64,7 @@ export default function TransportPage() {
                   className="inline-flex flex-col items-center justify-center bg-white px-8 py-4 rounded-2xl font-semibold hover:bg-white/90 transition-colors shadow-lg"
                   style={{ color: primaryColor }}
                 >
-                  <span className="flex items-center text-lg">Unverbindliches Angebot erhalten <ArrowRight className="ml-2 h-5 w-5" /></span>
+                  <span className="flex items-center text-lg">Preis berechnen <ArrowRight className="ml-2 h-5 w-5" /></span>
                   <span className="flex items-center text-sm font-normal opacity-75"><Clock className="h-3.5 w-3.5 mr-1" />In 2 Min. – unverbindlich</span>
                 </button>
                 <a

@@ -3,7 +3,7 @@
     "services": "Services",
     "serviceArea": "Service Area",
     "guide": "Moving Guide",
-    "freeQuote": "Free Quote"
+    "freeQuote": "Calculate Price"
   },
   "hero": {
     "title": "Your Reliable Moving Partner in Augsburg",
@@ -112,7 +112,7 @@
   "cta": {
     "getQuote": "Calculate Price",
     "call": "Call",
-    "freeQuote": "Free Quote"
+    "freeQuote": "Calculate Price"
   },
   "forms": {
     "name": "Your Name",
