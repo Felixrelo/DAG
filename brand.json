@@ -55,12 +55,12 @@
     "heroVideo": null,
     "gallery": [],
     "serviceImages": {
-      "Privatumzug": "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=600&q=80",
-      "Firmenumzug": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
-      "Fernumzug": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80",
-      "Transport": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600&q=80",
+      "Privatumzug": "/images/moving/mov-01.webp",
+      "Firmenumzug": "/images/moving/mov-03.webp",
+      "Fernumzug": "/images/moving/mov-02.webp",
+      "Transport": "/images/moving/mov-06.webp",
       "Entrümpelung": "/images/entruempelung.webp",
-      "Möbelmontage": "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=600&q=80",
+      "Möbelmontage": "/images/moving/mov-05.webp",
       "Halteverbotszone": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=600&q=80",
       "Einlagerung": "/images/storage.jpg"
     },
