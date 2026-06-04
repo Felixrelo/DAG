@@ -8,6 +8,8 @@ export interface CityData {
   description: string;
   metaTitle: string;
   metaDescription: string;
+  heroImage?: string;
+  gallery?: string[];
 }
 
 export const cities: CityData[] = [
@@ -18,7 +20,9 @@ export const cities: CityData[] = [
     "population": "300.000",
     "description": "Als Ihr lokaler Umzugspartner direkt vor Ort kennen wir Augsburg und Umgebung bestens. Professionelle Umzüge zum Festpreis – sicher, schnell und zuverlässig.",
     "metaTitle": "Umzugsunternehmen Augsburg - DAG Dahoam Logistik",
-    "metaDescription": "Professionelle Umzüge in Augsburg. ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ✓ Komplett versichert. Jetzt Angebot anfordern!"
+    "metaDescription": "Professionelle Umzüge in Augsburg. ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ✓ Komplett versichert. Jetzt Angebot anfordern!",
+    "heroImage": "/images/augsburg-hero.webp",
+    "gallery": ["/images/augsburg-hero.jpg", "/images/augsburg-rathaus.jpg", "/images/augsburg-merkurbrunnen.webp"]
   },
   {
     "slug": "muenchen",
@@ -293,6 +297,100 @@ export const cities: CityData[] = [
     "description": "Als Ihr  Umzugspartner  kennen wir Dachau und Umgebung bestens. Professionelle Umzüge zum Festpreis – sicher, schnell und zuverlässig.",
     "metaTitle": "Umzugsunternehmen Dachau - DAG Dahoam Logistik",
     "metaDescription": "Professionelle Umzüge in Dachau. ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ✓ Komplett versichert. Jetzt Angebot anfordern!"
+  },
+  {
+    "slug": "fuerstenfeldbruck",
+    "name": "Fürstenfeldbruck",
+    "state": "Bayern",
+    "population": "38.000",
+    "districts": ["Innenstadt", "Buchenau", "Neulindach", "Puch"],
+    "description": "Westlich von München gelegen, ist Fürstenfeldbruck fester Teil unseres Einsatzgebiets. Ob Privat- oder Firmenumzug – wir organisieren Ihren kompletten Umzug zum Festpreis: mit Verpackung, Möbelmontage und voller Versicherung, termingerecht und stressfrei.",
+    "metaTitle": "Umzugsunternehmen Fürstenfeldbruck - DAG Dahoam Logistik",
+    "metaDescription": "Professionelle Umzüge in Fürstenfeldbruck. ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ✓ Komplett versichert. Jetzt Angebot anfordern!",
+    "heroImage": "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1600&q=80"
+  },
+  {
+    "slug": "gersthofen",
+    "name": "Gersthofen",
+    "state": "Bayern",
+    "population": "23.000",
+    "description": "Direkt nördlich von Augsburg gelegen, gehört Gersthofen zu unserer Heimatregion. Als lokaler Umzugspartner im Landkreis Augsburg übernehmen wir Ihren Privat- oder Firmenumzug komplett – vom Einpacken bis zum Möbelaufbau, zum garantierten Festpreis.",
+    "metaTitle": "Umzugsunternehmen Gersthofen - DAG Dahoam Logistik",
+    "metaDescription": "Professionelle Umzüge in Gersthofen. ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ✓ Komplett versichert. Jetzt Angebot anfordern!",
+    "heroImage": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80"
+  },
+  {
+    "slug": "garching",
+    "name": "Garching",
+    "state": "Bayern",
+    "population": "18.000",
+    "districts": ["Garching-Hochbrück", "Dirnismaning"],
+    "description": "In Garching bei München, dem Forschungs- und Hochschulstandort nördlich der Landeshauptstadt, sind wir Ihr zuverlässiger Umzugspartner. Wir führen Privat- und Firmenumzüge komplett und versichert durch – sorgfältig, termingerecht und zum Festpreis.",
+    "metaTitle": "Umzugsunternehmen Garching - DAG Dahoam Logistik",
+    "metaDescription": "Professionelle Umzüge in Garching. ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ✓ Komplett versichert. Jetzt Angebot anfordern!",
+    "heroImage": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80"
+  },
+  {
+    "slug": "germering",
+    "name": "Germering",
+    "state": "Bayern",
+    "population": "41.000",
+    "districts": ["Unterpfaffenhofen", "Nebel", "Harthaus"],
+    "description": "Germering im Landkreis Fürstenfeldbruck, westlich von München, gehört zu unserem Kerngebiet. Wir übernehmen Ihren kompletten Haushalts- oder Firmenumzug – mit Verpackungsservice, Möbelmontage und voller Versicherung, zum garantierten Festpreis.",
+    "metaTitle": "Umzugsunternehmen Germering - DAG Dahoam Logistik",
+    "metaDescription": "Professionelle Umzüge in Germering. ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ✓ Komplett versichert. Jetzt Angebot anfordern!",
+    "heroImage": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1600&q=80"
+  },
+  {
+    "slug": "ottobrunn",
+    "name": "Ottobrunn",
+    "state": "Bayern",
+    "population": "22.000",
+    "description": "Südöstlich von München gelegen, ist Ottobrunn fest in unserem Einsatzgebiet. Ob Wohnung, ganzes Haus oder Büro – wir planen und führen Ihren Umzug komplett durch, termingerecht und voll versichert, ohne versteckte Kosten.",
+    "metaTitle": "Umzugsunternehmen Ottobrunn - DAG Dahoam Logistik",
+    "metaDescription": "Professionelle Umzüge in Ottobrunn. ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ✓ Komplett versichert. Jetzt Angebot anfordern!",
+    "heroImage": "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=1600&q=80"
+  },
+  {
+    "slug": "unterhaching",
+    "name": "Unterhaching",
+    "state": "Bayern",
+    "population": "25.000",
+    "description": "Unterhaching im Münchner Süden ist eine unserer Stammregionen. Wir übernehmen Privat- und Firmenumzüge von A bis Z – inklusive Verpackung, Möbelmontage und Festpreisgarantie ohne versteckte Kosten.",
+    "metaTitle": "Umzugsunternehmen Unterhaching - DAG Dahoam Logistik",
+    "metaDescription": "Professionelle Umzüge in Unterhaching. ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ✓ Komplett versichert. Jetzt Angebot anfordern!",
+    "heroImage": "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1600&q=80"
+  },
+  {
+    "slug": "koenigsbrunn",
+    "name": "Königsbrunn",
+    "state": "Bayern",
+    "population": "28.000",
+    "description": "Südlich von Augsburg gelegen, gehört Königsbrunn zu unserer Heimatregion. Als lokales Umzugsunternehmen kümmern wir uns um Ihren kompletten Privat- oder Firmenumzug – sicher, termingerecht und zum garantierten Festpreis.",
+    "metaTitle": "Umzugsunternehmen Königsbrunn - DAG Dahoam Logistik",
+    "metaDescription": "Professionelle Umzüge in Königsbrunn. ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ✓ Komplett versichert. Jetzt Angebot anfordern!",
+    "heroImage": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80"
+  },
+  {
+    "slug": "unterschleissheim",
+    "name": "Unterschleißheim",
+    "state": "Bayern",
+    "population": "29.000",
+    "description": "Unterschleißheim nördlich von München gehört zu unserem festen Einsatzgebiet. Vom kompletten Haushalt bis zum Büroumzug organisieren wir alles – mit Verpackungsservice, Möbelmontage und voller Versicherung, zum Festpreis.",
+    "metaTitle": "Umzugsunternehmen Unterschleißheim - DAG Dahoam Logistik",
+    "metaDescription": "Professionelle Umzüge in Unterschleißheim. ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ✓ Komplett versichert. Jetzt Angebot anfordern!",
+    "heroImage": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80"
+  },
+  {
+    "slug": "starnberg",
+    "name": "Starnberg",
+    "state": "Bayern",
+    "population": "23.000",
+    "districts": ["Söcking", "Percha", "Perchting"],
+    "description": "Am Starnberger See südwestlich von München sind wir Ihr Umzugspartner für anspruchsvolle Privat- und Firmenumzüge. Wir übernehmen Ihren kompletten Umzug zum Festpreis – diskret, sorgfältig und voll versichert.",
+    "metaTitle": "Umzugsunternehmen Starnberg - DAG Dahoam Logistik",
+    "metaDescription": "Professionelle Umzüge in Starnberg. ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ✓ Komplett versichert. Jetzt Angebot anfordern!",
+    "heroImage": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1600&q=80"
   }
 ];
 

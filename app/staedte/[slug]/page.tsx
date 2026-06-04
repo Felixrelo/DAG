@@ -35,6 +35,12 @@ export default async function CityPage({ params }: PageProps) {
   const secondaryColor = brandConfig.theme?.colors?.secondary || "#ec4899";
   const ctaUrl = "/angebot";
   const services = brandConfig.services || [];
+  const serviceImages: Record<string, string> = (brandConfig as any).media?.serviceImages || {};
+  const heroImage = city.heroImage || "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1600&q=80";
+  const galleryImages =
+    city.gallery && city.gallery.length > 0
+      ? city.gallery
+      : (Object.values(serviceImages) as string[]).slice(0, 6);
 
   const trustBadges = ["Kostenlose Besichtigung", "Festpreisgarantie", "100% Versichert"];
 
@@ -43,8 +49,14 @@ export default async function CityPage({ params }: PageProps) {
       <Header />
       <main>
         {/* Hero */}
-        <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative text-white py-20 overflow-hidden">
+          <img
+            src={heroImage}
+            alt={`Umzugsunternehmen in ${city.name}`}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-gray-900/80 to-gray-900/55" />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <div className="flex flex-wrap gap-3 mb-6">
                 {trustBadges.map((badge) => (
@@ -95,15 +107,30 @@ export default async function CityPage({ params }: PageProps) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Unsere Leistungen in {city.name}</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.slice(0, 6).map((service: string) => (
-                <div key={service} className="bg-gray-50 rounded-xl p-6">
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: `${primaryColor}15` }}>
-                    <CheckCircle className="h-5 w-5" style={{ color: primaryColor }} />
+              {services.slice(0, 6).map((service: string) => {
+                const img = serviceImages[service];
+                return (
+                  <div key={service} className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+                    <div className="relative h-44 overflow-hidden bg-gray-100">
+                      {img ? (
+                        <img
+                          src={img}
+                          alt={`${service} in ${city.name}`}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: `${primaryColor}10` }}>
+                          <CheckCircle className="h-12 w-12 opacity-60" style={{ color: primaryColor }} />
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{service}</h3>
+                      <p className="text-gray-600 text-sm">Professioneller {service}-Service in {city.name} und Umgebung.</p>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{service}</h3>
-                  <p className="text-gray-600 text-sm">Professioneller {service}-Service in {city.name} und Umgebung.</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -149,6 +176,27 @@ export default async function CityPage({ params }: PageProps) {
             </div>
           </div>
         </section>
+
+        {/* Gallery / Media */}
+        {galleryImages.length > 0 && (
+          <section className="py-16 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-3">Eindrücke aus {city.name} und Umgebung</h2>
+              <p className="text-gray-600 mb-8">Ein erfahrenes Team, sauberes Equipment und sorgfältiges Arbeiten – so sieht ein Umzug mit DAG aus.</p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {galleryImages.map((src: string, i: number) => (
+                  <div key={i} className="relative h-48 md:h-56 rounded-xl overflow-hidden shadow-sm">
+                    <img
+                      src={src}
+                      alt={`DAG Umzug ${city.name} – Eindruck ${i + 1}`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Other Cities */}
         <section className="py-16 bg-white">
