@@ -7,7 +7,13 @@ declare global {
   }
 }
 
-type LabelKey = "leadCallback" | "phoneClick" | "whatsappClick";
+type LabelKey =
+  | "leadCallback"
+  | "phoneClick"
+  | "whatsappClick"
+  | "funnelStart"
+  | "funnelContactSubmitted"
+  | "funnelComplete";
 
 // Plaintext user data for Google Ads Enhanced Conversions. gtag.js normalizes
 // and SHA-256 hashes these client-side before sending — never hash here.

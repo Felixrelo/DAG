@@ -124,7 +124,12 @@
     "metaPixelId": null,
     "googleAdsConversionId": "AW-17852355930",
     "googleAdsLabels": {
-      "leadCallback": null
+      "funnelStart": "SEn1CJ3HkbkcENqq1cBC",
+      "funnelContactSubmitted": "7SJoCMO4_LgcENqq1cBC",
+      "funnelComplete": "SMtrCKbpkLkcENqq1cBC",
+      "phoneClick": "q3YoCPyLkrkcENqq1cBC",
+      "whatsappClick": "0kpLCKfz_LgcENqq1cBC",
+      "leadCallback": "O7ShCKWqkbkcENqq1cBC"
     }
   },
   "integrations": {
