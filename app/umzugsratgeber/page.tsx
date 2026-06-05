@@ -219,11 +219,21 @@ export default function UmzugsratgeberPage() {
 
         {/* Intro Section */}
         <section className="py-16 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.guide.introTitle}</h2>
-            <div className="prose prose-lg max-w-none text-gray-600">
-              <p>{t.guide.introText1}</p>
-              <p>{t.guide.introText2}</p>
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.guide.introTitle}</h2>
+                <div className="prose prose-lg max-w-none text-gray-600">
+                  <p>{t.guide.introText1}</p>
+                  <p>{t.guide.introText2}</p>
+                </div>
+              </div>
+              <img
+                src="/images/ratgeber/planung.webp"
+                alt="Umzug in Ruhe planen – mit Checkliste und Zeitplan"
+                className="rounded-2xl shadow-md w-full h-72 md:h-[24rem] object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
@@ -291,6 +301,13 @@ export default function UmzugsratgeberPage() {
               <p className="text-lg text-gray-600">{t.guide.packingSubtitle}</p>
             </div>
 
+            <img
+              src="/images/ratgeber/packen.webp"
+              alt="Umzugskartons richtig packen, beschriften und verschließen"
+              className="rounded-2xl shadow-md w-full h-64 md:h-80 object-cover mb-10"
+              loading="lazy"
+            />
+
             <div className="grid md:grid-cols-2 gap-6">
               {packingTips.map((tip, index) => (
                 <div key={index} className="bg-gray-50 rounded-xl p-6">
@@ -309,6 +326,13 @@ export default function UmzugsratgeberPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.guide.costTitle}</h2>
               <p className="text-lg text-gray-600">{t.guide.costSubtitle}</p>
             </div>
+
+            <img
+              src="/images/ratgeber/kosten.webp"
+              alt="Umzugskosten kalkulieren und vergleichen"
+              className="rounded-2xl shadow-md w-full h-64 md:h-80 object-cover mb-10"
+              loading="lazy"
+            />
 
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 mb-8">
               <div className="space-y-4">
@@ -348,6 +372,13 @@ export default function UmzugsratgeberPage() {
             <div className="prose prose-lg max-w-none text-gray-600 mb-8">
               <p>{t.guide.chooseIntro}</p>
             </div>
+
+            <img
+              src="/images/ratgeber/auswahl.webp"
+              alt="Seriöses Umzugsunternehmen auswählen – persönliche Beratung vor Ort"
+              className="rounded-2xl shadow-md w-full h-64 md:h-80 object-cover mb-10"
+              loading="lazy"
+            />
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="space-y-4">
@@ -412,6 +443,12 @@ export default function UmzugsratgeberPage() {
         <section className="py-20 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.guide.afterTitle}</h2>
+            <img
+              src="/images/ratgeber/neues-zuhause.webp"
+              alt="Angekommen im neuen Zuhause – Schlüsselübergabe und Einzug"
+              className="rounded-2xl shadow-md w-full h-64 md:h-80 object-cover mb-10"
+              loading="lazy"
+            />
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <h3 className="font-semibold text-gray-900 mb-4">{t.guide.authorities}</h3>

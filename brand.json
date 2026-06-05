@@ -56,12 +56,12 @@
     "gallery": [],
     "serviceImages": {
       "Privatumzug": "/images/moving/mov-01.webp",
-      "Firmenumzug": "/images/moving/mov-03.webp",
+      "Firmenumzug": "/images/moving/mov-10.webp",
       "Fernumzug": "/images/moving/mov-02.webp",
-      "Transport": "/images/moving/mov-06.webp",
+      "Transport": "/images/moving/mov-09.webp",
       "Entrümpelung": "/images/entruempelung.webp",
       "Möbelmontage": "/images/moving/mov-05.webp",
-      "Halteverbotszone": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=600&q=80",
+      "Halteverbotszone": "/images/halteverbotszone.webp",
       "Einlagerung": "/images/storage.jpg"
     },
     "teamPhotos": []

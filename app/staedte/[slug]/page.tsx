@@ -17,7 +17,7 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// Reusable, brand-neutral German moving-scene library (see scripts/gen-city-images.mjs)
+// Reusable, brand-neutral German moving-scene library (authentic photos, no branding).
 const MOVING_LIBRARY = [
   "/images/moving/mov-01.webp",
   "/images/moving/mov-02.webp",
@@ -25,15 +25,39 @@ const MOVING_LIBRARY = [
   "/images/moving/mov-04.webp",
   "/images/moving/mov-05.webp",
   "/images/moving/mov-06.webp",
+  "/images/moving/mov-07.webp",
+  "/images/moving/mov-08.webp",
+  "/images/moving/mov-09.webp",
+  "/images/moving/mov-10.webp",
+  "/images/moving/mov-11.webp",
+  "/images/moving/mov-12.webp",
 ];
 
-// Pick a stable, varied pair of moving images per city (so neighbours differ).
-function movingPair(slug: string): string[] {
+// Pick a stable, varied set of distinct moving images per city, so neighbouring
+// cities show different photos (deterministic hash of the slug, prime stride).
+function movingSet(slug: string, count: number): string[] {
   let h = 0;
   for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
-  const a = h % MOVING_LIBRARY.length;
-  const b = (a + 2) % MOVING_LIBRARY.length;
-  return [MOVING_LIBRARY[a], MOVING_LIBRARY[b]];
+  const n = MOVING_LIBRARY.length;
+  const start = h % n;
+  const stride = 5; // coprime with 12 → visits every image before repeating
+  const out: string[] = [];
+  for (let i = 0; i < Math.min(count, n); i++) {
+    out.push(MOVING_LIBRARY[(start + i * stride) % n]);
+  }
+  return out;
+}
+
+// Lighten a hex colour toward white by `ratio` (0–1). Used to keep the brand
+// accent readable when it sits on the dark hero photo.
+function lighten(hex: string, ratio: number): string {
+  const m = /^#?([0-9a-f]{6})$/i.exec(hex.trim());
+  if (!m) return hex;
+  const num = parseInt(m[1], 16);
+  const r = Math.round((num >> 16) + (255 - (num >> 16)) * ratio);
+  const g = Math.round(((num >> 8) & 0xff) + (255 - ((num >> 8) & 0xff)) * ratio);
+  const b = Math.round((num & 0xff) + (255 - (num & 0xff)) * ratio);
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
 export async function generateStaticParams() {
@@ -63,16 +87,19 @@ export default async function CityPage({ params }: PageProps) {
 
   const primaryColor = brandConfig.theme?.colors?.primary || "#1E4785";
   const secondaryColor = brandConfig.theme?.colors?.secondary || "#1E4785";
+  // Readable, lightened brand accent for text placed over the dark hero image.
+  const heroAccent = lighten(secondaryColor, 0.62);
   const ctaUrl = "/angebot";
   const services = brandConfig.services || [];
   const serviceImages: Record<string, string> = (brandConfig as any).media?.serviceImages || {};
   const heroImage = city.heroImage || "/images/cities/muenchen-hero.webp";
 
-  // Gallery: landmark + two authentic moving scenes (or the city's own photo set).
+  // Gallery: the city's hero landmark + a varied set of authentic moving scenes
+  // (or the city's own curated photo set, if provided).
   const galleryImages =
     city.gallery && city.gallery.length >= 3
       ? city.gallery
-      : [heroImage, ...movingPair(city.slug)];
+      : [heroImage, ...movingSet(city.slug, 5)];
 
   const trustBadges = ["Kostenlose Besichtigung", "Festpreisgarantie", "100% Versichert"];
 
@@ -136,22 +163,22 @@ export default async function CityPage({ params }: PageProps) {
             alt={`Umzugsunternehmen in ${city.name}${city.landmark ? ` – ${city.landmark}` : ""}`}
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-gray-900/80 to-gray-900/55" />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-950/95 via-gray-900/85 to-gray-900/65" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl [text-shadow:_0_2px_8px_rgb(0_0_0_/_55%)]">
               <div className="flex flex-wrap gap-3 mb-6">
                 {trustBadges.map((badge) => (
                   <div key={badge} className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                    <CheckCircle className="h-4 w-4 mr-2" style={{ color: secondaryColor }} />
+                    <CheckCircle className="h-4 w-4 mr-2" style={{ color: heroAccent }} />
                     <span className="text-sm font-medium">{badge}</span>
                   </div>
                 ))}
               </div>
 
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Umzugsunternehmen <span style={{ color: secondaryColor }}>{city.name}</span>
+                Umzugsunternehmen <span style={{ color: heroAccent }}>{city.name}</span>
               </h1>
-              <p className="text-xl text-gray-300 mb-8">{city.description}</p>
+              <p className="text-xl text-gray-200 mb-8">{city.description}</p>
 
               <div className="flex flex-wrap gap-4 mb-8">
                 <a

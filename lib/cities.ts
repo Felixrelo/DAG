@@ -42,6 +42,8 @@ export const cities: CityData[] = [
       "/images/augsburg-merkurbrunnen.webp",
       "/images/moving/mov-01.webp",
       "/images/moving/mov-04.webp",
+      "/images/moving/mov-09.webp",
+      "/images/moving/mov-12.webp",
     ],
   },
   {
