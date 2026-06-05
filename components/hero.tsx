@@ -89,7 +89,7 @@ export function Hero() {
               <div className="relative">
                 <HeroAddressWidget
                   src="https://funnel.relofair.com/widgets/hero-address?primary=%231e4785&primaryFg=%23ffffff&primaryRing=rgba%2830%2C58%2C95%2C0.18%29&angebot=https%3A%2F%2Ffunnel.relofair.com%2F%3Futm_source%3Ddag%26lang%3Dde"
-                  angebotUrl="https://funnel.relofair.com/?utm_source=dag&lang=de"
+                  angebotUrl="/angebot"
                 />
               </div>
             </div>
