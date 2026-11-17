@@ -22,6 +22,8 @@ export async function POST(request: Request) {
       await resend.emails.send({
         from: 'DAG Dahoam Logistik <noreply@relofair.com>',
         to: notificationEmail,
+        // Antworten gehen an den Kunden (ohne E-Mail: an DAG selbst, nie an relofair.com).
+        replyTo: email || notificationEmail,
         subject: `Neue Einlagerung-Anfrage von ${name}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
